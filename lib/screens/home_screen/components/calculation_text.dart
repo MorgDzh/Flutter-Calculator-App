@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:calc/provider/calculation_provider.dart';
 import 'package:calc/utils/constants.dart';
 import 'package:flutter/material.dart';
