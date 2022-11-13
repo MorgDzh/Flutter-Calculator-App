@@ -1,3 +1,4 @@
+import 'package:calc/screens/home_screen/components/calculation_text.dart';
 import 'package:flutter/material.dart';
 import 'components/calculator_button.dart';
 
