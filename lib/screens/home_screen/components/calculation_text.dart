@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:calc/provider/calculation_provider.dart';
 import 'package:calc/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,6 +10,8 @@ class CalculationText extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final calculationNotifier = ref.watch(calculationProvider);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
@@ -16,7 +19,7 @@ class CalculationText extends ConsumerWidget {
         FittedBox(
           fit: BoxFit.fitWidth,
           child: Text(
-            '0',
+            calculationNotifier.prevData,
             style: TextStyle(
               fontSize: 32,
               color: kSecondaryColor.withOpacity(0.7),
@@ -30,7 +33,7 @@ class CalculationText extends ConsumerWidget {
         FittedBox(
           fit: BoxFit.fitWidth,
           child: Text(
-            '0',
+            calculationNotifier.data,
             style: TextStyle(
               fontSize: 48,
               fontWeight: FontWeight.bold,

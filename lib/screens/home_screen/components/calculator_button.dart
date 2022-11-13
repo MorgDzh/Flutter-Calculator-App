@@ -1,3 +1,4 @@
+import 'package:calc/provider/calculation_provider.dart';
 import 'package:calc/utils/constants.dart';
 // hide -> для того чтобы взять свои boxshadow и boxdecoration, не из материала
 import 'package:flutter/material.dart' hide BoxShadow, BoxDecoration;
@@ -54,6 +55,13 @@ class _CalculatorButtonState extends ConsumerState<CalculatorButton> {
       }),
       onPointerUp: (event) => setState(() {
         isPressed = false;
+
+        final provider  = ref.read(calculationProvider.notifier);
+        if (widget.shape == Shape.square) {
+          provider.addSign(widget.text);
+        } else {
+          provider.addNumber(widget.text);
+        }
       }),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
