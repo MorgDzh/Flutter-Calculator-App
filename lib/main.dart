@@ -3,6 +3,8 @@ import 'package:calc/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// ? Неоморфизм – это слияние слов нео и скевоморфизм. Этот стиль использует размытие, угол и интенсивность тени объекта для его выделения. 
+
 void main() {
   runApp(
     ProviderScope(
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Calculator App',
+      // Убирает надпись дебаггера
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: kPrimaryColor,
